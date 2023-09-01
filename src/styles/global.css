@@ -17,11 +17,11 @@ body {
 h1,
 h2 {
     font-family: 'Press Start 2P', cursive;
-    font-weight: normal;
+    font-weight: lighter;
 }
 
 h1 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 0;
 }
 
@@ -131,5 +131,10 @@ html.light {
 
     .nav-links a {
         margin: 0 8px;
+    }
+    
+    h1 {
+        font-size: 0.9em;
+        margin: 0;
     }
 }
