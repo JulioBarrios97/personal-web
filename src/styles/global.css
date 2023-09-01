@@ -137,4 +137,8 @@ html.light {
         font-size: 0.9em;
         margin: 0;
     }
+
+    h2 {
+        font-size: 0.9em;
+    }
 }
