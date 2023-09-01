@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+const pageTitle = "Projects";
+---
+<Layout pageTitle={pageTitle}>
+    <div class="gif">
+        <img width="300" height="259" alt="RaccoonLaptopGif" src="/projects.gif"/>
+    </div>
+    <!-- <h2>Contributions</h2>
+    <ul role="list" class="link-card-grid">
+        <Card
+            href="https://github.com/"
+            image="/GitHub.webp"
+            title="Open-source 1"
+            body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
+        />
+        <Card
+            href="https://github.com/"
+            image="/GitHub.webp"
+            title="Open-source 2"
+            body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
+        />
+    </ul> -->
+    <h2>Proyectos</h2>
+    <ul role="list" class="link-card-grid">
+        <Card
+            href="https://www.keravnos.co/"
+            image="/keravnos-web.png"
+            title="Keravnos web"
+            body="Landing page creada con Nextjs y TailwindCSS"
+        />
+        <Card
+            href="https://react-bank-app-five.vercel.app/"
+            image="/ract-bank-app.png"
+            title="React bank app"
+            body="Landing page creada con React y TailwindCSS"
+        />
+        <Card
+            href="http://keravnos0.great-site.net/"
+            image="/photo-app.png"
+            title="Foto app"
+            body="Landing page creada con WordPress y Elementor"
+        />
+        <Card
+            href="http://keravnos2.rf.gd/"
+            image="/web-designer-agency.png"
+            title="Agencia de diseño"
+            body="Landing page creada con WordPress y Elementor"
+        />
+    </ul>
+</Layout>

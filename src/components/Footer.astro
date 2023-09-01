@@ -1,0 +1,72 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer style="margin-top: 20%;">
+    <div class="social-icons">
+        <a
+            href="https://www.linkedin.com/in/julio-agustin-barrios/"
+            target="_blank"
+        >
+            <img
+                src="/linkedin-icon.svg"
+                alt="LinkedIn Icon"
+                width="30"
+                height="30"
+            />
+        </a>
+        <a href="https://github.com/JulioBarrios97" target="_blank">
+            <img
+                src="/github-icon.svg"
+                alt="Github Icon"
+                width="30"
+                height="30"
+            />
+        </a>
+        <a href="mailto:julioagbarrios@gmail.com" target="_blank">
+            <img
+                src="/mail-icon.svg"
+                alt="Mail Icon"
+                width="30"
+                height="30"
+            />
+        </a>
+    </div>
+    <div>
+        <small
+            >&copy; {year} Developed by <a
+                href="https://www.keravnos.co/"
+                style="color: #BF934F;">Keravnos</a
+            >. All Rights Reserved.</small
+        >
+    </div>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .social-icons a img {
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+        transform: scale(1.2);
+    }
+
+    small {
+        font-size: 1rem;
+    }
+
+    small a {
+        text-decoration: none;
+    }
+</style>
