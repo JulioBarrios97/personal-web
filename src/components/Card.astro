@@ -1,24 +1,29 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+    title: string;
+    body: string;
+    href: string;
 }
 
 const { href, image, title, body } = Astro.props;
 ---
+
 <li class="link-card">
     <a href={href}>
         <div class="img">
-            <img width="226" height="127" src={image} class="card-img" alt="ProjectImage">
+            <img
+                width="226"
+                height="127"
+                src={image}
+                class="card-img"
+                alt="ProjectImage"
+            />
         </div>
-		<h3>
-			{title}
-		</h3>
-		<p>
-			{body}
-		</p>
-	</a>
+        <h3><b>{title}</b></h3>
+        <p>
+            {body}
+        </p>
+    </a>
 </li>
 <style>
     .link-card {
@@ -33,7 +38,7 @@ const { href, image, title, body } = Astro.props;
         text-decoration: none;
         line-height: 1.4;
         border-radius: 8px;
-        color: #69CC4C;
+        color: #69cc4c;
     }
 
     .img {
@@ -46,7 +51,7 @@ const { href, image, title, body } = Astro.props;
 
     h3 {
         margin: 0;
-        font-family: 'Times New Roman';
+        font-family: "Times New Roman";
         font-size: 1.5rem;
         font-weight: normal;
         text-align: center;
