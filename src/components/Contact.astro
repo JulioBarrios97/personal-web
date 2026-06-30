@@ -1,0 +1,154 @@
+---
+const email = "julioagbarrios@gmail.com";
+// Argentina: wa.me requiere el 9 tras el código de país (+54 3764 362252)
+const whatsapp = "5493764362252";
+const web3formsKey = "1fd924cd-4bcc-41b6-90b1-2b0c1cbc5a05";
+---
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p class="contact-intro">
+    ¿Tenés un proyecto en mente o querés asesorarte? Escribime y armamos algo.
+    Suelo responder dentro de las 24 hs.
+  </p>
+
+  <div class="button contact-direct">
+    <a href={`mailto:${email}`}><button>Enviar email</button></a>
+    <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener">
+      <button class="btn-ghost">WhatsApp</button>
+    </a>
+  </div>
+
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value={web3formsKey} />
+    <input type="hidden" name="subject" value="Nuevo mensaje desde el portfolio (JAB)" />
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+    <label>
+      <span>Nombre</span>
+      <input type="text" name="name" required autocomplete="name" />
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required autocomplete="email" />
+    </label>
+    <label>
+      <span>Mensaje</span>
+      <textarea name="message" rows="4" required></textarea>
+    </label>
+    <button type="submit">Enviar mensaje</button>
+    <p class="form-status" aria-live="polite"></p>
+  </form>
+</section>
+
+<style>
+  .contact-intro {
+    color: var(--green-dim);
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-direct {
+    justify-content: flex-start;
+    margin: 0 0 1.6rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    border: 1px solid var(--green-faint);
+    background: var(--green-panel);
+    border-radius: 8px;
+    padding: 1.2rem;
+  }
+
+  .contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .contact-form span {
+    font-size: 1rem;
+    color: var(--green-dim);
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-family: var(--font-term);
+    font-size: 1.05rem;
+    color: var(--green-bright);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--green-faint);
+    border-radius: 6px;
+    padding: 0.5rem 0.7rem;
+    resize: vertical;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: var(--glow);
+  }
+
+  .contact-form button {
+    align-self: flex-start;
+    margin-top: 0.2rem;
+  }
+
+  .form-status {
+    margin: 0;
+    font-size: 1rem;
+    min-height: 1.2em;
+  }
+
+  .form-status.ok {
+    color: var(--green-bright);
+  }
+
+  .form-status.err {
+    color: #e0a0a0;
+  }
+</style>
+
+<script>
+  const form = document.querySelector(".contact-form");
+  const status = document.querySelector(".form-status");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const accessKey = data.get("access_key");
+
+    if (!accessKey || accessKey === "TU_ACCESS_KEY_DE_WEB3FORMS") {
+      status.textContent =
+        "Formulario en configuración. Mientras tanto, escribime por email o WhatsApp.";
+      status.className = "form-status err";
+      return;
+    }
+
+    status.textContent = "Enviando...";
+    status.className = "form-status";
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      const json = await res.json();
+      if (json.success) {
+        status.textContent = "¡Mensaje enviado! Te respondo pronto.";
+        status.className = "form-status ok";
+        form.reset();
+      } else {
+        throw new Error(json.message || "error");
+      }
+    } catch (err) {
+      status.textContent =
+        "Hubo un problema al enviar. Probá por email o WhatsApp.";
+      status.className = "form-status err";
+    }
+  });
+</script>

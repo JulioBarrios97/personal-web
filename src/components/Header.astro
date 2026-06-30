@@ -1,8 +1,9 @@
 ---
 import Navigation from './Navigation.astro';
+const { isHome = false } = Astro.props;
 ---
 <header>
     <nav>
-        <Navigation />
+        <Navigation isHome={isHome} />
     </nav>
 </header>

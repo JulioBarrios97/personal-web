@@ -2,71 +2,76 @@
 const year = new Date().getFullYear();
 ---
 
-<footer style="margin-top: 20%;">
+<footer>
+    <p class="footer-cta">¿Arrancamos un proyecto? <a href="/#contacto">Hablemos →</a></p>
     <div class="social-icons">
         <a
             href="https://www.linkedin.com/in/julio-agustin-barrios/"
             target="_blank"
+            aria-label="LinkedIn"
         >
-            <img
-                src="/linkedin-icon.svg"
-                alt="LinkedIn Icon"
-                width="30"
-                height="30"
-            />
+            <img src="/linkedin-icon.svg" alt="LinkedIn" width="30" height="30" />
         </a>
-        <a href="https://github.com/JulioBarrios97" target="_blank">
-            <img
-                src="/github-icon.svg"
-                alt="Github Icon"
-                width="30"
-                height="30"
-            />
+        <a href="https://github.com/JulioBarrios97" target="_blank" aria-label="GitHub">
+            <img src="/github-icon.svg" alt="GitHub" width="30" height="30" />
         </a>
-        <a href="mailto:julioagbarrios@gmail.com" target="_blank">
-            <img
-                src="/mail-icon.svg"
-                alt="Mail Icon"
-                width="30"
-                height="30"
-            />
+        <a href="mailto:julioagbarrios@gmail.com" aria-label="Email">
+            <img src="/mail-icon.svg" alt="Email" width="30" height="30" />
         </a>
     </div>
-    <!-- <div>
-        <small
-            >&copy; {year} Developed by <a
-                href="https://www.keravnos.co/"
-                style="color: #BF934F;">Keravnos</a
-            >. All Rights Reserved.</small
-        >
-    </div> -->
+    <small class="copyright">© {year} Julio Agustín Barrios</small>
 </footer>
 <style>
     footer {
         text-align: center;
-        padding: 2rem;
+        padding: 2rem 1rem 3rem;
+        margin-top: 4rem;
+        border-top: 1px solid var(--green-faint);
+    }
+
+    .footer-cta {
+        text-indent: 0;
+        font-size: 1.15rem;
+        color: var(--green-dim);
+        margin-bottom: 1.4rem;
+    }
+
+    .footer-cta a {
+        color: var(--green-bright);
+        text-decoration: none;
+    }
+
+    .footer-cta a:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
     }
 
     .social-icons {
         display: flex;
         justify-content: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
+        gap: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .social-icons a {
+        color: var(--green);
+        line-height: 0;
     }
 
     .social-icons a img {
-        transition: transform 0.3s ease;
+        transition: transform 0.25s ease, filter 0.25s ease;
     }
 
     .social-icons a:hover img {
         transform: scale(1.2);
+        filter: drop-shadow(var(--glow));
     }
 
-    small {
-        font-size: 1rem;
-    }
-
-    small a {
-        text-decoration: none;
+    .copyright {
+        border: none;
+        background: none;
+        color: var(--green-dim);
+        font-size: 0.95rem;
+        padding: 0;
     }
 </style>

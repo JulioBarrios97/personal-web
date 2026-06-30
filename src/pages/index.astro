@@ -1,54 +1,83 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const pageTitle = "Julio Agustín Barrios";
+import Services from "../components/Services.astro";
+import Contact from "../components/Contact.astro";
+const pageTitle = "Julio Agustín Barrios — Ingeniero de Software Freelance";
+
+const experience = [
+  {
+    role: "Freelance, Ingeniero de Software",
+    date: "Feb 2026 - Presente",
+    body: "Consultoría técnica (diseño de sistemas, stack y arquitectura) y desarrollo end-to-end: sitios web y e-commerce, videojuegos con Godot, integraciones de APIs, componentes frontend y docencia técnica.",
+  },
+  {
+    role: "Sailing Protocol, Software Engineer",
+    date: "Oct 2023 - Ene 2026",
+    body: "Desarrollo de una plataforma de tokenización de activos financieros, trabajando en arquitectura y desarrollo end-to-end. Diseño e implementación de un bot de market making rentable: definición de flujos, gestión de riesgo y escalabilidad. Trabajo transversal en backend, frontend y smart contracts.",
+  },
+  {
+    role: "It-techgroup, Blockchain & Web Developer",
+    date: "Jul 2022 - Oct 2023",
+    body: "Gestioné equipos técnicos y actué como enlace entre técnicos, clientes y directores. Desarrollé y desplegué Smart Contracts, y creé páginas web con herramientas full code y low code.",
+  },
+  {
+    role: "EducaciónIT, Profesor Blockchain",
+    date: "Ene 2023 - Feb 2023",
+    body: "Profesor a cargo de dictar el curso Blockchain Ethereum Solidity.",
+  },
+  {
+    role: "Shokworks, Blockchain Backend",
+    date: "Feb 2022 - Jun 2022",
+    body: "Contribuí al desarrollo de Smart Contracts para colecciones de NFT (ERC721) y establecí conexiones cruciales entre el frontend y los Smart Contracts.",
+  },
+  {
+    role: "Freelance, Jr Developer",
+    date: "Jul 2021 - Ene 2022",
+    body: "Desarrollé bots de trading algorítmico con Python y participé en proyectos blockchain con enfoque en Smart Contracts.",
+  },
+];
 ---
 
-<Layout pageTitle={pageTitle}>
+<Layout pageTitle={pageTitle} isHome={true}>
   <div class="gif">
     <img width="300" height="350" alt="falloutGif" src="/fallout.gif" />
   </div>
-  <br /><br />
-  <h1 style="margin-bottom: 20px">Julio Agustín Barrios</h1>
-  <small>Software Engineer</small>
-  <br /><br />
-  <hr />
-  <h2 style="margin-top: 20px">Acerca de mi</h2>
-  <p>
-    Con más de 5 años en la industria IT, he trabajado en una amplia variedad de
-    proyectos que me permitieron desarrollar experiencia sólida en backend,
-    frontend y blockchain. A lo largo de este recorrido integré tecnologías
-    modernas, buenas prácticas y procesos completos de desarrollo, fortaleciendo
-    tanto mi capacidad técnica como mis habilidades de comunicación y trabajo en
-    equipo.
+  <br />
+  <h1 style="margin-bottom: 12px">Julio Agustín Barrios</h1>
+  <p class="tagline">
+    <small>Ingeniero de Software</small>
+    <span class="tagline-stack">Web · Backend · Blockchain · Consultoría</span>
   </p>
-  <p>
-    Mi experiencia abarca desde el desarrollo end-to-end hasta la participación
-    en arquitecturas complejas, pasando por la docencia como profesor de
-    desarrollo blockchain. Esta combinación me permitió construir criterio
-    técnico, autonomía y una visión integral del ciclo de vida de un producto.
-  </p>
-  <p>
-    Actualmente trabajo como ingeniero de software freelance, ofreciendo
-    consultoría técnica y desarrollando proyectos end-to-end: sitios web y
-    e-commerce, integraciones de APIs en backends, componentes frontend,
-    videojuegos con Godot y docencia técnica.
-  </p>
-  <div class="button">
-    <a href="/projects/">
-      <button>Portafolio</button>
-    </a>
-    <a href="/Software Engineer Julio Barrios.pdf">
-      <button>Descargar CV</button>
-    </a>
+
+  <div class="button hero-cta">
+    <a href="#contacto"><button>Trabajemos juntos</button></a>
+    <a href="/projects/"><button class="btn-ghost">Portafolio</button></a>
+    <a href="/Software Engineer Julio Barrios.pdf"
+      ><button class="btn-ghost">Descargar CV</button></a
+    >
   </div>
+
+  <hr />
+
+  <h2>Acerca de mí</h2>
+  <p>
+    Soy ingeniero de software con más de 5 años en la industria IT, trabajando
+    de punta a punta en backend, frontend y blockchain. Integro tecnologías
+    modernas, buenas prácticas y procesos completos de desarrollo en cada
+    proyecto.
+  </p>
+  <p>
+    Mi recorrido va del desarrollo end-to-end al diseño de arquitecturas
+    complejas, pasando por la docencia en desarrollo blockchain. Esa combinación
+    me dio criterio técnico, autonomía y una visión integral del ciclo de vida
+    de un producto. Hoy lo pongo al servicio de tu proyecto como freelance.
+  </p>
+
+  <Services />
+
   <h2>Skills</h2>
   <div class="link-images">
-    <img
-      width="46"
-      height="46"
-      alt="Solidity"
-      src="/solidity-svgrepo-com.svg"
-    />
+    <img width="46" height="46" alt="Solidity" src="/solidity-svgrepo-com.svg" />
     <img width="46" height="46" alt="Nextjs" src="/nextjs-svgrepo-com.svg" />
     <img
       width="46"
@@ -62,12 +91,7 @@ const pageTitle = "Julio Agustín Barrios";
       alt="Angular"
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg"
     />
-    <img
-      width="46"
-      height="46"
-      alt="TailwindCSS"
-      src="/tailwind-svgrepo-com.svg"
-    />
+    <img width="46" height="46" alt="TailwindCSS" src="/tailwind-svgrepo-com.svg" />
     <img
       width="46"
       height="46"
@@ -88,132 +112,81 @@ const pageTitle = "Julio Agustín Barrios";
     />
     <img width="46" height="46" alt="Python" src="/python-svgrepo-com.svg" />
   </div>
+
   <h2>Experiencia</h2>
-  <ul>
-    <li>
-      <h3 style="text-align: left">
-        <b>Freelance, Ingeniero de Software</b>
-      </h3>
-      <small>Feb 2026 - Presente</small>
-      <h4>
-        Consultoría técnica (diseño de sistemas, stack y arquitectura) y
-        desarrollo end-to-end: sitios web y e-commerce, videojuegos con Godot,
-        integraciones de APIs, componentes frontend y docencia técnica.
-      </h4>
-    </li>
-  </ul>
-  <br />
-  <hr />
-  <ul>
-    <li>
-      <h3 style="text-align: left">
-        <b>Sailing Protocol, Software Engineer</b>
-      </h3>
-      <small>Oct 2023 - Ene 2026</small>
-      <h4>
-        Desarrollo de una plataforma de tokenización de activos financieros,
-        trabajando en arquitectura y desarrollo end-to-end. Participación en el
-        diseño e implementación de un bot de market making rentable, incluyendo
-        definición de flujos, gestión de riesgo y escalabilidad. Trabajo
-        transversal en backend, frontend y smart contracts, utilizando
-        tecnologías modernas y prácticas de despliegue e infraestructura.
-      </h4>
-    </li>
-  </ul>
-  <br />
-  <hr />
-  <ul>
-    <li>
-      <h3 style="text-align: left">
-        <b>It-techgroup, Blockchain & Web Developer</b>
-      </h3>
-      <small>Jul 2022 - Oct 2023</small>
-      <h4>
-        Gestioné equipos técnicos, actué como enlace entre técnicos, clientes y
-        directores. Además, desarrollé y desplegué Smart Contracts, y creé
-        páginas web usando herramientas full code y low code.
-      </h4>
-    </li>
-  </ul>
-  <br />
-  <hr />
-  <ul>
-    <li>
-      <h3 style="text-align: left"><b>EducaciónIT, Profesor Blockchain</b></h3>
-      <small>Ene 2023 - Feb 2023</small>
-      <h4>Profesor a cargo de dictar el curso Blockchain Ethereum Solidity.</h4>
-    </li>
-  </ul>
-  <br />
-  <hr />
-  <ul>
-    <li>
-      <h3 style="text-align: left"><b>Shokworks, Blockchain Backend</b></h3>
-      <small>Feb 2022 - Jun 2022</small>
-      <h4>
-        Contribuí al desarrollo de Smart Contracts para colecciones de NFT
-        (ERC721) y establecí conexiones cruciales entre el frontend y los Smart
-        Contracts.
-      </h4>
-    </li>
-  </ul>
-  <br />
-  <hr />
-  <ul>
-    <li>
-      <h3 style="text-align: left"><b>Freelance, Jr Developer</b></h3>
-      <small>Jul 2021 - Ene 2022</small>
-      <h4>
-        Desarrollé bots de trading algorítmico con Python y participé en
-        proyectos blockchain con un enfoque en Smart Contracts.
-      </h4>
-    </li>
-  </ul>
-</Layout>
-<style>
-  /* small */
-  small {
-    background-color: #584966;
-    color: #fdebf3;
-    border-radius: 6px;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 600;
-    padding: 0.3em 0.6em 0.2em;
-  }
-
-  /* Button */
-  button {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background: rgba(0, 0, 0, 0);
-    border: 2px solid #69cc4c;
-    border-radius: 8px;
-    color: #69cc4c;
-    font: 600 12px "Press Start 2P", cursive;
-    padding: 8px 16px;
-    transition: background-color 0.4s, color 0.4s;
-  }
-
-  button:hover {
-    background-color: #69cc4c;
-    color: #fdebf3;
-    cursor: pointer;
-  }
-
-  .button {
-    text-align: center;
-  }
-
-  /* Skill images */
-  .link-images img {
-    margin: 16px 4px;
-  }
-
-  @media only screen and (max-width: 600px) {
-    .link-images img {
-      height: 30px;
-      width: 30px;
-      margin: 16px 1px;
+  <ul class="timeline">
+    {
+      experience.map((job) => (
+        <li>
+          <h3>{job.role}</h3>
+          <small>{job.date}</small>
+          <p>{job.body}</p>
+        </li>
+      ))
     }
+  </ul>
+
+  <Contact />
+</Layout>
+
+<style>
+  .tagline {
+    margin: 0 0 0.4rem;
+    text-indent: 0;
+  }
+
+  .tagline-stack {
+    display: block;
+    color: var(--green-dim);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-cta {
+    justify-content: flex-start;
+    margin-top: 1.2rem;
+  }
+
+  /* Experience as a compact terminal timeline */
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0.6rem 0 0;
+  }
+
+  .timeline li {
+    position: relative;
+    padding: 0 0 1.3rem 1.2rem;
+    border-left: 1px solid var(--green-faint);
+  }
+
+  .timeline li:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: var(--glow);
+  }
+
+  .timeline h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.4rem;
+    color: var(--green-bright);
+  }
+
+  .timeline p {
+    font-size: 1rem;
+    line-height: 1.35;
+    margin: 0.5rem 0 0;
+    color: var(--green-dim);
   }
 </style>
