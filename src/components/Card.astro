@@ -3,20 +3,24 @@ interface Props {
     title: string;
     body: string;
     href: string;
+    image: string;
+    newTab?: boolean;
 }
 
-const { href, image, title, body } = Astro.props;
+const { href, image, title, body, newTab = true } = Astro.props;
+const target = newTab ? "_blank" : undefined;
+const rel = newTab ? "noopener noreferrer" : undefined;
 ---
 
 <li class="link-card">
-    <a href={href} target="_blank">
+    <a href={href} target={target} rel={rel}>
         <div class="img">
             <img
                 width="226"
                 height="127"
                 src={image}
                 class="card-img"
-                alt="ProjectImage"
+                alt={`Captura de ${title}`}
             />
         </div>
         <h3><b>{title}</b></h3>
